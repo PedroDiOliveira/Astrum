@@ -1,7 +1,9 @@
 package main
 
-import "astrum/internal/api"
+import (
+	"astrum/internal/api"
+)
 
 func main() {
-	api.RunServer()
+	api.SetupRoutes()
 }

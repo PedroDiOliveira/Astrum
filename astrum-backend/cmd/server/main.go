@@ -1,9 +1,12 @@
 package main
 
 import (
+	"astrum/cmd/server/database"
 	"astrum/internal/api"
 )
 
 func main() {
-	api.SetupRoutes()
+	client := database.MongoConnect()
+	api.SetupRoutes(client)
+
 }

@@ -1,36 +1,22 @@
 package api
 
 import (
-	"encoding/json"
-	"log"
-	"net/http"
-	"time"
+	"astrum/internal/handler"
+
+	"github.com/gofiber/fiber/v2"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
-type Router struct{}
+func SetupRoutes(client *mongo.Client) {
+	app := fiber.New()
 
-func (Router) ServeHTTP(res http.ResponseWriter, req *http.Request) {
-	res.Header().Set("Access-Control-Allow-Origin", "*")
-	res.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
-	res.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+	bodie := app.Group("/bodie")
 
-	path := req.URL.Path
+	bodieHandler := handler.NewBodieHandler(client)
 
-	if path == "/check" && req.Method == "GET" {
-		response := "ola"
+	bodie.Post("/new", bodieHandler.CadasterBodie)
 
-		body, _ := json.Marshal(response)
-		res.Write(body)
-	}
-}
+	bodie.Put("/update", bodieHandler.EditBodie)
 
-func RunServer() {
-	s := http.Server{
-		Addr:         ":8080",
-		Handler:      Router{},
-		ReadTimeout:  3 * time.Second,
-		WriteTimeout: 3 * time.Second,
-	}
-
-	log.Fatal(s.ListenAndServe())
+	app.Listen(":8080")
 }

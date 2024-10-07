@@ -18,5 +18,9 @@ func SetupRoutes(client *mongo.Client) {
 
 	bodie.Put("/update", bodieHandler.EditBodie)
 
+	bodie.Get("/planets", bodieHandler.GetAllBodies)
+
+	bodie.Get("/planets/:name", bodieHandler.GetBodie)
+
 	app.Listen(":8080")
 }

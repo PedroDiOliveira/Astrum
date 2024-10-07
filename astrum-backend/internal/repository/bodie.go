@@ -82,3 +82,27 @@ func (b *BodieRepository) UpdateBodie(model *model.Bodie) error {
 
 	return nil
 }
+
+func (b *BodieRepository) GetAll() ([]model.Bodie, error) {
+	cursor, err := b.collection.Find(context.TODO(), bson.M{})
+	if err != nil {
+		return nil, err
+	}
+
+	var lista []model.Bodie
+
+	for cursor.Next(context.TODO()) {
+		var model model.Bodie
+		cursor.Decode(&model)
+		lista = append(lista, model)
+	}
+	return lista, nil
+}
+
+func (b *BodieRepository) GetSingleBodie(name string) (*model.Bodie, error) {
+	bodie := b.collection.FindOne(context.TODO(), bson.M{"name": name})
+
+	var model model.Bodie
+	bodie.Decode(&model)
+	return &model, nil
+}

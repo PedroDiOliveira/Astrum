@@ -45,3 +45,21 @@ func (b *BodieHandler) EditBodie(c *fiber.Ctx) error {
 
 	return c.SendStatus(200)
 }
+
+func (b *BodieHandler) GetAllBodies(c *fiber.Ctx) error {
+	lista, err := b.bodieRepository.GetAll()
+	if err != nil {
+		return err
+	}
+	return c.JSON(lista)
+}
+
+func (b *BodieHandler) GetBodie(c *fiber.Ctx) error {
+	name := c.Params("name")
+
+	bodie, err := b.bodieRepository.GetSingleBodie(name)
+	if err != nil {
+		return err
+	}
+	return c.JSON(bodie)
+}

@@ -3,6 +3,7 @@ package repository
 import (
 	"astrum/internal/model"
 	"context"
+	"fmt"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -38,21 +39,46 @@ func (b *BodieRepository) FindBodie(bodie string) (error, *model.Bodie) {
 }
 
 func (b *BodieRepository) UpdateBodie(model *model.Bodie) error {
-	_, err := b.collection.UpdateOne(
-		context.TODO(),
-		bson.M{"_id": model.IdBodie},
-		bson.M{"$set": bson.M{
-			"name":         model.Name,
-			"distancesun":  model.DistanceSun,
-			"moons":        model.Moons,
-			"gravity":      model.Gravity,
-			"yearduration": model.YearDuration,
-			"dayduration":  model.DayDuration,
-			"temperature":  model.Temperature,
-			"photo":        model.Photo,
-		}})
-	if err != nil {
-		return err
+	updateFields := bson.M{}
+	resultado := []byte(model.Photo)
+	fmt.Print(resultado)
+	// Verifica cada campo e só adiciona ao updateFields se não for nulo
+	if model.Name != "" {
+		updateFields["name"] = model.Name
 	}
+	if model.DistanceSun != 0 {
+		updateFields["distancesun"] = model.DistanceSun
+	}
+	if model.Moons != nil {
+		updateFields["moons"] = model.Moons
+	}
+	if model.Gravity != 0 {
+		updateFields["gravity"] = model.Gravity
+	}
+	if model.YearDuration != 0 {
+		updateFields["yearduration"] = model.YearDuration
+	}
+	if model.DayDuration != 0 {
+		updateFields["dayduration"] = model.DayDuration
+	}
+	if model.Temperature != 0 {
+		updateFields["temperature"] = model.Temperature
+	}
+	if len(model.Photo) > 0 { // Verifica se o array de bytes não está vazio
+		updateFields["photo"] = model.Photo
+	}
+
+	// Realiza o update apenas com os campos não nulos
+	if len(updateFields) > 0 {
+		_, err := b.collection.UpdateOne(
+			context.TODO(),
+			bson.M{"_id": model.IdBodie},
+			bson.M{"$set": updateFields},
+		)
+		if err != nil {
+			return err
+		}
+	}
+
 	return nil
 }

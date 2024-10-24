@@ -4,6 +4,7 @@ import "go.mongodb.org/mongo-driver/bson/primitive"
 
 type Bodie struct {
 	Name         string             `json:"name,omitempty" bson:"name,omitempty"`
+	Radius       float64            `json:"radius,omitempty" bson:"radius,omitempty"`
 	DistanceSun  float64            `json:"distanceSun,omitempty" bson:"distanceSun,omitempty"`
 	Moons        []string           `json:"moons,omitempty" bson:"moons,omitempty"`
 	Gravity      float64            `json:"gravity,omitempty" bson:"gravity,omitempty"`

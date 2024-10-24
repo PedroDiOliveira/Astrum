@@ -40,14 +40,16 @@ func (b *BodieRepository) FindBodie(bodie string) (error, *model.Bodie) {
 
 func (b *BodieRepository) UpdateBodie(model *model.Bodie) error {
 	updateFields := bson.M{}
-	resultado := []byte(model.Photo)
-	fmt.Print(resultado)
 	// Verifica cada campo e só adiciona ao updateFields se não for nulo
+	fmt.Println(model.Radius)
 	if model.Name != "" {
 		updateFields["name"] = model.Name
 	}
 	if model.DistanceSun != 0 {
 		updateFields["distancesun"] = model.DistanceSun
+	}
+	if model.Radius != 0 {
+		updateFields["radius"] = model.Radius
 	}
 	if model.Moons != nil {
 		updateFields["moons"] = model.Moons

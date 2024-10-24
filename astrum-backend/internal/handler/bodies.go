@@ -24,7 +24,7 @@ func NewBodieHandler(client *mongo.Client) *BodieHandler {
 func (b *BodieHandler) CadasterBodie(c *fiber.Ctx) error {
 	var model model.Bodie
 	c.BodyParser(&model)
-	newBodie := b.bodieFactory.CreateBodie(model.Name, model.Moons, model.DistanceSun, model.Gravity, model.YearDuration, model.DayDuration, model.Temperature, model.Photo)
+	newBodie := b.bodieFactory.CreateBodie(model.Name, model.Radius, model.Moons, model.DistanceSun, model.Gravity, model.YearDuration, model.DayDuration, model.Temperature, model.Photo)
 	err := b.bodieRepository.InsertBodie(newBodie)
 
 	if err != nil {

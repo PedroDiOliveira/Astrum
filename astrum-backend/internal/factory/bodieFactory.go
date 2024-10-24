@@ -12,9 +12,10 @@ func NewBodieFactory() *BodieFactory {
 	return &BodieFactory{}
 }
 
-func (bodieF *BodieFactory) CreateBodie(name string, moons []string, distanceSun, gravity, yearDuration, dayDuration, temperature float64, photo []byte) *model.Bodie {
+func (bodieF *BodieFactory) CreateBodie(name string, radius float64, moons []string, distanceSun, gravity, yearDuration, dayDuration, temperature float64, photo []byte) *model.Bodie {
 	return &model.Bodie{
 		Name:         name,
+		Radius:       radius,
 		DistanceSun:  distanceSun,
 		Moons:        moons,
 		Gravity:      gravity,

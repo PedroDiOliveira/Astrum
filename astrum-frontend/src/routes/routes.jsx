@@ -3,7 +3,7 @@ import { BrowserRouter,
     Routes
  } from "react-router-dom";
 
- import LandingPage from "../components/LandingPage"
+ import LandingPage from "../views/LandingPage"
 
  export default function Rotas(){
     return(

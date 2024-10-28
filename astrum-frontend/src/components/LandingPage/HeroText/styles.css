@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "OpenSansCondBold";
+    src: url("../../../assets/fonts/OpenSans-CondBold.ttf");
+}
+
+header{
+    height: 50dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 55px;
+    font-family: "OpenSansCondBold",sans-serif ;
+    background-image: linear-gradient(90deg, #333333,#DADADA);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: lighter;
+    letter-spacing: 10px;
+}
+
+p{
+    font-family: "OpenSansCondBold",sans-serif ;
+    font-size: 12px;
+    color: #9e9e9e;
+    font-weight: lighter;
+}

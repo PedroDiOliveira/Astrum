@@ -4,11 +4,14 @@ import (
 	"astrum/internal/handler"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
 func SetupRoutes(client *mongo.Client) {
 	app := fiber.New()
+
+	app.Use(cors.New())
 
 	bodie := app.Group("/bodie")
 

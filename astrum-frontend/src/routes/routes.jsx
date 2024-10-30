@@ -9,7 +9,7 @@ import { BrowserRouter,
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/home" Component={LandingPage}/>
+                <Route path="/" Component={LandingPage}/>
             </Routes>
         </BrowserRouter>
     )

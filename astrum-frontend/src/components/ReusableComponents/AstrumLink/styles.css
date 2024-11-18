@@ -1,18 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@100;400;700&display=swap');
+@font-face {
+    font-family: 'Afacad';
+    src: url('/src/assets/fonts/Afacad-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
 
 .card {
-    height: 90px;
+    height: 50px;
     color: #808080;
     width: 100%;
     border-radius: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-inline: 1.5em;
+    padding-inline: 1em;
     align-items: center;
-    font-size: xx-large;
+    font-size: x-large;
     font-family: "Afacad", sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     transition: all ease 0.7s;
     border: 2px solid #80808000;
 }
@@ -20,15 +25,15 @@
 .card:hover {
     border: 2px solid #808080;
     flex-grow: 0.08;
-    font-size: 40px;
+    font-size: 38px;
     cursor: pointer;
 }
 
 .card:hover .card-icon {
     opacity: 1;
     visibility: visible;
-    height: 65px;
-    width: 65px;
+    height: 50px;
+    width: 50px;
     transition: all ease 0.7s;
 }
 

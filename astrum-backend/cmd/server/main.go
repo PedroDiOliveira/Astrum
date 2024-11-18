@@ -8,5 +8,4 @@ import (
 func main() {
 	client := database.MongoConnect()
 	api.SetupRoutes(client)
-
 }

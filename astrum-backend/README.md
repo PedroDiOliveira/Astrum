@@ -2,7 +2,7 @@
 
 ### Description
 
-**astrum-backend** is a backend application designed to provide data about celestial bodies within our solar system. This API delivers information such as the characteristics, classifications, and curiosities of planets, moons, and other celestial objects. The data will be consumed by the frontend application of Astrum, allowing users to explore and learn about these bodies.
+**astrum-backend** is a backend application designed to provide data about celestial planets within our solar system. This API delivers information such as the characteristics, classifications, and curiosities of planets, moons, and other celestial objects. The data will be consumed by the frontend application of Astrum, allowing users to explore and learn about these planets.
 
 This backend is developed using **Golang** and the **Fiber** framework, and it integrates with a **MongoDB** database to store and manage celestial body data.
 

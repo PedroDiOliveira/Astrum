@@ -9,21 +9,27 @@ import (
 )
 
 func SetupRoutes(client *mongo.Client) {
+
+	//Inicialize fiber
 	app := fiber.New()
 
+	//Allow CORS methods
 	app.Use(cors.New())
 
-	bodie := app.Group("/bodie")
+	//////////////////////
+	//Planet`s endpoints//
+	//////////////////////
 
-	bodieHandler := handler.NewBodieHandler(client)
+	planet := app.Group("/planet")
 
-	bodie.Post("/new", bodieHandler.CadasterBodie)
+	//Declare variable that allow endpoints to user planet related functions
+	planetHandler := handler.NewPlanetHandler(client)
 
-	bodie.Put("/update", bodieHandler.EditBodie)
+	planet.Post("/new", planetHandler.RegisterPlanet)
+	planet.Put("/update", planetHandler.EditPlanet)
+	planet.Get("/planets", planetHandler.GetAllPlanets)
+	planet.Get("/planets/:name", planetHandler.GetPlanet)
 
-	bodie.Get("/planets", bodieHandler.GetAllBodies)
-
-	bodie.Get("/planets/:name", bodieHandler.GetBodie)
-
+	//Set port to api listening TODO: .ENV configurantion
 	app.Listen(":8080")
 }

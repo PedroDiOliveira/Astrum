@@ -10,7 +10,7 @@ import (
 
 func MongoConnect() *mongo.Client {
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
-	opts := options.Client().ApplyURI("mongodb+srv://pedrohsoterio:PedroAstrum123@bodies.qnz8h.mongodb.net/?retryWrites=true&w=majority&appName=Bodies").SetServerAPIOptions(serverAPI)
+	opts := options.Client().ApplyURI("mongodb+srv://pedrohsoterio:PedroAstrum123@bodies.qnz8h.mongodb.net/?retryWrites=true&w=majority&appName=bodies").SetServerAPIOptions(serverAPI)
 
 	client, err := mongo.Connect(context.TODO(), opts)
 	if err != nil {

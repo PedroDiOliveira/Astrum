@@ -1,6 +1,6 @@
 import HeroText from "../../components/LandingPage/HeroText";
 import NextPageArrow from "../../components/LandingPage/NextPageArrow";
-import SaturnPhoto from "../../assets/planets/saturn.svg";
+import SaturnPhoto from "/src/assets/planets/saturn.svg";
 import { useEffect, useState } from "react";
 import "./styles.css";
 

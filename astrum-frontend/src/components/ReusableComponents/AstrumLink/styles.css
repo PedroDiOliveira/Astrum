@@ -25,7 +25,7 @@
 .card:hover {
     border: 2px solid #808080;
     flex-grow: 0.08;
-    font-size: 38px;
+    font-size: 33px;
     cursor: pointer;
 }
 

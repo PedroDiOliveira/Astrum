@@ -10,7 +10,7 @@ html{
 
 body {
   
-  background: url("./assets/spacebackground.jpg") no-repeat center center fixed;
+  background: url("./assets/backgrounds/spacebackground.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -19,3 +19,11 @@ body {
   overflow: hidden;
   color: white;
 }
+
+* {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Standard syntax */
+}
+

@@ -1,0 +1,19 @@
+.returnaArrow{
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow{
+    height: 20px;
+    transition: all ease 0.4s;
+}
+
+.arrow:hover {
+    scale: 1.2;
+    transition: all ease 0.4s;
+}

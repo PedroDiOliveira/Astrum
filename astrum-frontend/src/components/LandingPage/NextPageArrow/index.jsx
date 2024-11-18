@@ -7,7 +7,7 @@ export default function NextPageArrow({ onClick }) {
 
     const PushToNavigationPage = () => {
         setTimeout(() => {
-            navigate("/home");
+            navigate("/universe-library");
         }, 1500);
         if (onClick) {
             onClick();

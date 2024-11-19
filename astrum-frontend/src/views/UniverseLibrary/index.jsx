@@ -21,11 +21,11 @@ export default function UniverseLibrary() {
 
   return (
     <main>
-        <div className="links">
+        {/* <div className="links"> */}
             {planets.map((planet, index) => (
                 <AstrumLink key={index} {...planet} />
             ))}
-        </div>
+        {/* </div> */}
     </main>
   );
 }

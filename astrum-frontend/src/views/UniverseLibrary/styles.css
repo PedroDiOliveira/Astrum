@@ -1,13 +1,10 @@
 main{
     height: 100vh;
-    overflow-y: scroll;
-    gap: 10px;
-    padding-inline: 3%;
-}
-
-.links{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-y: scroll;
+    gap: 10px;
+    padding-inline: 3%;
 }

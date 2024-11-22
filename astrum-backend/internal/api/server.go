@@ -27,8 +27,8 @@ func SetupRoutes(client *mongo.Client) {
 
 	planet.Post("/new", planetHandler.RegisterPlanet)
 	planet.Put("/update", planetHandler.EditPlanet)
-	planet.Get("/planets", planetHandler.GetAllPlanets)
-	planet.Get("/planets/:name", planetHandler.GetPlanet)
+	planet.Get("/", planetHandler.GetAllPlanets)
+	planet.Get(":name", planetHandler.GetPlanet)
 
 	//Set port to api listening TODO: .ENV configurantion
 	app.Listen(":8080")

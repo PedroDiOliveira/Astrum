@@ -8,7 +8,7 @@ export default function UniverseLibrary() {
 
   async function getData() {
     try {
-      const response = await axios.get("http://localhost:8080/planet/planets");
+      const response = await axios.get("http://localhost:8080/planet");
       setPlanets(response.data);
     } catch (error) {
       console.error("Erro ao buscar dados dos planetas:", error);

@@ -1,22 +1,17 @@
-import RightArrow from "../../../assets/icons/Arrow.svg";
+import LeftArrow from "../../../assets/icons/leftArrow.svg";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
-export default function ReturnArrow({ onClick, path }) {
+export default function ReturnArrow({ path }) {
     const navigate = useNavigate();
 
     const PushToNavigationPage = () => {
-        setTimeout(() => {
-            navigate({path});
-        }, 1500);
-        if (onClick) {
-            onClick();
-        }
+        navigate(path);
     };
 
     return (
         <div className="return-arrow" onClick={PushToNavigationPage}>
-            <img className="arrow" src={RightArrow} alt="return arrow" />
+            <img className="arrow" src={LeftArrow} alt="return arrow" />
         </div>
     );
 }

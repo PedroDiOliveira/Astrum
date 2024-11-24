@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AstrumLink from "../../components/ReusableComponents/AstrumLink";
 import "./styles.css";
-import { Route, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import ReturnArrow from "../../components/ReusableComponents/ReturnArrow";
 
 export default function UniverseLibrary() {
   const navigate = useNavigate()
@@ -24,7 +25,12 @@ export default function UniverseLibrary() {
 
   return (
     <div className="universeLibrary">
-      
+      <div className="upper-head">
+        <ReturnArrow path={"/"} />
+      </div>
+      <div className="title">
+        <h2>Universe</h2>
+      </div>
       <main>
           {/* <div className="links"> */}
               {planets.map((planet, index) => (

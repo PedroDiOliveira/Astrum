@@ -29,7 +29,7 @@ export default function UniverseLibrary() {
         <ReturnArrow path={"/"} />
       </div>
       <div className="title">
-        <h2>Universe</h2>
+        <h2>UNIVERSE</h2>
       </div>
       <main>
           {/* <div className="links"> */}

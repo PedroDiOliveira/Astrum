@@ -1,15 +1,15 @@
-.returnaArrow{
-    height: 5em;
-    width: 5em;
+.return-arrow{
+    height: 3em;
+    width: 3em;
     border-radius: 50%;
     background-color: transparent;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
 }
 
 .arrow{
-    height: 20px;
+    height: 18px;
     transition: all ease 0.4s;
 }
 

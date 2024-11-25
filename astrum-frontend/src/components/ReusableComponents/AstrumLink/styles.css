@@ -15,22 +15,27 @@
     justify-content: space-between;
     padding-inline: 1em;
     align-items: center;
-    font-size: x-large;
+    font-size:  large;
     font-family: "Afacad", sans-serif;
     transition: all ease 0.7s;
-    border: 2px solid #80808000;
+    border: 1px solid #80808000;
+    letter-spacing: 3px;
 }
 
 .card h4 {
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .card:hover {
-    border: 2px solid #ffffffff;
+    border: 1px solid #ffffffff;
     flex-grow: 0.08;
-    font-size: 33px;
+    font-size: 26px;
     cursor: pointer;
     color:white;
+}
+
+.card:hover h4{
+    font-weight: 700;
 }
 
 .card:hover .card-icon {

@@ -21,6 +21,12 @@ func SetupRoutes(client *mongo.Client) {
 	//////////////////////
 
 	planet := app.Group("/planet")
+	themes := app.Group("/theme")
+
+	//Declare variable that allow endpoints to user library related functions
+	themeHandler := handler.NewThemeHandler(client)
+
+	themes.Get("/", themeHandler.GetAllThemes)
 
 	//Declare variable that allow endpoints to user planet related functions
 	planetHandler := handler.NewPlanetHandler(client)

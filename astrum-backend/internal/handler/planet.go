@@ -53,7 +53,7 @@ func (b *PlanetHandler) GetAllPlanets(c *fiber.Ctx) error {
 		return err
 	}
 	if lista == nil {
-		return fmt.Errorf("deu ruim demais")
+		return fmt.Errorf("Failed to get planets!")
 	}
 	return c.JSON(lista)
 }

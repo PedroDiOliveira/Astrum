@@ -18,6 +18,8 @@ import { BrowserRouter,
                 <Route path="/universe-library/*" Component={ThemeLibrary}/>
                 <Route path="/not-found" Component={NotFound}/>
                 <Route path="/internal-error" Component={InternalError}/>
+                <Route path="/planets/*" Component={NotFound}/>
+                <Route path="*" Component={NotFound} />
             </Routes>
         </BrowserRouter>
     )

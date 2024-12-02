@@ -20,7 +20,7 @@ func SetupRoutes(client *mongo.Client) {
 	//Planet`s endpoints//
 	//////////////////////
 
-	planet := app.Group("/planet")
+	planet := app.Group("/planets")
 	themes := app.Group("/theme")
 
 	//Declare variable that allow endpoints to user library related functions

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AstrumLink from "../../components/ReusableComponents/AstrumLink";
 import "./styles.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation} from "react-router-dom";
 import ReturnArrow from "../../components/ReusableComponents/ReturnArrow";
 
 export default function UniverseLibrary() {

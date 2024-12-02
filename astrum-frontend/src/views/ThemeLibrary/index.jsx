@@ -48,7 +48,7 @@ export default function ThemeLibrary() {
       <main>
         {themes.map((theme, index) => (
           <AstrumLink
-            onClick={() => handleClick(theme.name)}
+            onClick={() => handleClick(`/${path}/${theme.name}`)}
             key={index}
             name={theme.name}
             photo={theme.photo}

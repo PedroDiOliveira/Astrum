@@ -1,0 +1,10 @@
+.photo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo{
+    height: 240px;
+    width: 240px;
+}

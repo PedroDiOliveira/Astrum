@@ -45,6 +45,9 @@ func (b *PlanetRepository) UpdatePlanet(model *model.Planet) error {
 	if model.Name != "" {
 		updateFields["name"] = model.Name
 	}
+	if model.Nickname != "" {
+		updateFields["nickname"] = model.Nickname
+	}
 	if model.DistanceSun != 0 {
 		updateFields["distancesun"] = model.DistanceSun
 	}

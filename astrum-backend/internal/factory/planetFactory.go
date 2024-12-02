@@ -12,7 +12,7 @@ func NewPlanetFactory() *PlanetFactory {
 	return &PlanetFactory{}
 }
 
-func (planetF *PlanetFactory) CreatePlanet(name string, radius float64, moons []string, distanceSun, gravity, yearDuration, dayDuration, temperature float64, photo string) *model.Planet {
+func (planetF *PlanetFactory) CreatePlanet(name, photo, nickname string, radius float64, moons []string, distanceSun, gravity, yearDuration, dayDuration, temperature float64) *model.Planet {
 	return &model.Planet{
 		Name:         name,
 		Radius:       radius,
@@ -23,6 +23,7 @@ func (planetF *PlanetFactory) CreatePlanet(name string, radius float64, moons []
 		DayDuration:  dayDuration,
 		Temperature:  temperature,
 		Photo:        photo,
+		Nickname:     nickname,
 		IdPlanet:     primitive.NewObjectID(),
 	}
 }

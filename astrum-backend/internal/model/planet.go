@@ -12,5 +12,6 @@ type Planet struct {
 	DayDuration  float64            `json:"dayDuration,omitempty" bson:"dayDuration,omitempty"`
 	Temperature  float64            `json:"temperature,omitempty" bson:"temperature,omitempty"`
 	Photo        string             `json:"photo,omitempty" bson:"photo,omitempty"`
+	Nickname     string             `json:"nickname,omitempty" bson:"nickname,omitempty"`
 	IdPlanet     primitive.ObjectID `json:"id,omitempty" bson:"_id,omitempty"`
 }

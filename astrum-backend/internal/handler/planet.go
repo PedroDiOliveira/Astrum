@@ -25,7 +25,7 @@ func NewPlanetHandler(client *mongo.Client) *PlanetHandler {
 func (b *PlanetHandler) RegisterPlanet(c *fiber.Ctx) error {
 	var model model.Planet
 	c.BodyParser(&model)
-	newPlanet := b.planetFactory.CreatePlanet(model.Name, model.Radius, model.Moons, model.DistanceSun, model.Gravity, model.YearDuration, model.DayDuration, model.Temperature, model.Photo)
+	newPlanet := b.planetFactory.CreatePlanet(model.Name, model.Photo, model.Nickname, model.Radius, model.Moons, model.DistanceSun, model.Gravity, model.YearDuration, model.DayDuration, model.Temperature)
 	err := b.planetRepository.InsertPlanet(newPlanet)
 
 	if err != nil {

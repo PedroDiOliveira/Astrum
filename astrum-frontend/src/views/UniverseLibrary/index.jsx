@@ -7,12 +7,12 @@ import ReturnArrow from "../../components/ReusableComponents/ReturnArrow";
 
 export default function UniverseLibrary() {
   const navigate = useNavigate()
-  const [planets, setPlanets] = useState([]);
+  const [themes, setThemes] = useState([]);
 
   async function getData() {
     try {
-      const response = await axios.get("http://localhost:8080/planet");
-      setPlanets(response.data);
+      const response = await axios.get("http://localhost:8080/theme");
+      setThemes(response.data);
     } catch (error) {
       navigate("/internal-error");
       console.error("Erro ao buscar dados dos planetas:", error);
@@ -23,6 +23,15 @@ export default function UniverseLibrary() {
     getData();
   }, []);
 
+  async function handleClick(rota) {
+    try {
+      navigate(rota.toLowerCase())
+    } catch (error) {
+      navigate("/internal-error");
+      console.error("Erro ao buscar dados do tema:", error);
+    }
+  }
+
   return (
     <div className="universeLibrary">
       <div className="upper-head">
@@ -32,11 +41,14 @@ export default function UniverseLibrary() {
         <h2>UNIVERSE</h2>
       </div>
       <main>
-          {/* <div className="links"> */}
-              {planets.map((planet, index) => (
-                  <AstrumLink key={index} {...planet} />
+              {themes.map((theme, index) => (
+                  <AstrumLink 
+                  onClick={() => handleClick(theme.name)} 
+                  key={index} 
+                  name={theme.name} 
+                  photo={theme.photo} 
+                />
               ))}
-          {/* </div> */}
       </main>
     </div>
   );

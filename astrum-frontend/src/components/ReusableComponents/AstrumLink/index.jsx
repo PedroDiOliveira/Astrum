@@ -1,12 +1,12 @@
-import "./styles.css"
+import "./styles.css";
 
-export default function AstrumLink(bodie){
-    return(
-        <div className="card">
-            <h4>{bodie.name}</h4>
-            <div className="card-icon">
-                <img src={bodie.photo} alt="Foto do planeta" />
-            </div>
-        </div>
-    )
+export default function AstrumLink({ name, photo, onClick }) {
+  return (
+    <div className="card" onClick={onClick} style={{ cursor: "pointer" }}>
+      <h4>{name}</h4>
+      <div className="card-icon">
+        <img src={photo} alt={`Imagem representando ${name}`} />
+      </div>
+    </div>
+  );
 }

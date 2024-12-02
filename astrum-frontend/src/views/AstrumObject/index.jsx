@@ -6,7 +6,7 @@ export default function AstrumObject(){
     return(
         <div className="main-content">
             <ObjectHeader/>
-            <ObjectName />
+            <ObjectName name="MARS" nickname="THE RED PLANET" />
         </div>
     )
 }

@@ -4,7 +4,7 @@ import ReturnArrow from "../../ReusableComponents/ReturnArrow"
 export default function ObjectHeader(){
     return(
         <div className="object-header">
-            <ReturnArrow path={"/universe-library"} />
+            <ReturnArrow/>
         </div>
     )
 }

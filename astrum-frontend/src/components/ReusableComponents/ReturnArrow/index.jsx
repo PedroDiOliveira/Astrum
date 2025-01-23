@@ -5,12 +5,16 @@ import "./styles.css";
 export default function ReturnArrow({ path }) {
     const navigate = useNavigate();
 
-    const PushToNavigationPage = () => {
-        navigate(path);
+    const handleNavigation = () => {
+        if (path) {
+            navigate(path); // Navega para o path fornecido
+        } else {
+            navigate(-1); // Volta para o path anterior no histórico
+        }
     };
 
     return (
-        <div className="return-arrow" onClick={PushToNavigationPage}>
+        <div className="return-arrow" onClick={handleNavigation}>
             <img className="arrow" src={LeftArrow} alt="return arrow" />
         </div>
     );

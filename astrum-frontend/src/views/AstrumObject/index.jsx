@@ -32,7 +32,7 @@ export default function AstrumObject() {
                 name={planet ? planet.toUpperCase() : "UNKNOWN"} 
                 nickname={planetData?.nickname || "UNKNOWN NICKNAME"} 
             />
-            <ObjectPhoto photo={planetData?.photo || fotoProvisoria} />
+            <ObjectPhoto photo={planetData?.photo || fotoProvisoria} className="photo-animation"/>
         </div>
     );
 }

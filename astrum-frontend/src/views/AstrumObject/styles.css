@@ -2,3 +2,17 @@
     height: 100dvh;
     padding-inline: 1.5em;
 }
+
+/* styles.css */
+.photo-animation {
+    animation: scaleUp 1.2s ease-out;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}

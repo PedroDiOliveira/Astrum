@@ -31,6 +31,7 @@ export default function AstrumObject() {
             <ObjectName 
                 name={planet ? planet.toUpperCase() : "UNKNOWN"} 
                 nickname={planetData?.nickname || "UNKNOWN NICKNAME"} 
+                hexColor={planetData?.color}
             />
             <ObjectPhoto photo={planetData?.photo || fotoProvisoria} className="photo-animation"/>
         </div>

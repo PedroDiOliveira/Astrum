@@ -23,6 +23,8 @@
     gap: 1em;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
+    opacity: 0;
+    animation: fadeInUp 0.4s ease-out forwards;
 }
 
 .stat-label {
@@ -34,6 +36,19 @@
 .stat-value {
     font-weight: 700;
     text-align: right;
+}
+
+.stat-row:nth-child(1) { animation-delay: 0.05s; }
+.stat-row:nth-child(2) { animation-delay: 0.12s; }
+.stat-row:nth-child(3) { animation-delay: 0.19s; }
+.stat-row:nth-child(4) { animation-delay: 0.26s; }
+.stat-row:nth-child(5) { animation-delay: 0.33s; }
+.stat-row:nth-child(6) { animation-delay: 0.40s; }
+.stat-row:nth-child(7) { animation-delay: 0.47s; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @media (min-width: 900px) {

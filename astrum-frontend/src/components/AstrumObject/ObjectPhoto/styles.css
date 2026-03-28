@@ -7,7 +7,12 @@
 .photo {
     height: 240px;
     width: 240px;
-    animation: scaleUp 1.2s ease-out;
+    animation: scaleUp 1.2s ease-out, float 7s ease-in-out infinite 1.2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 @media (min-width: 900px) {
@@ -19,6 +24,11 @@
     .photo {
         height: min(75vh, 580px);
         width: min(75vh, 580px);
-        transform: translateX(60px);
+        animation: scaleUp 1.2s ease-out, float-desktop 7s ease-in-out infinite 1.2s;
     }
+}
+
+@keyframes float-desktop {
+    0%, 100% { transform: translateX(60px) translateY(0); }
+    50% { transform: translateX(60px) translateY(-12px); }
 }

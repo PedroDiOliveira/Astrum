@@ -1,19 +1,16 @@
-.return-arrow{
+.return-arrow {
     height: 3em;
     width: 3em;
     border-radius: 50%;
     background-color: transparent;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity ease 0.3s;
 }
 
-.arrow{
-    height: 18px;
-    transition: all ease 0.4s;
-}
-
-.arrow:hover {
-    scale: 1.2;
-    transition: all ease 0.4s;
+.return-arrow:hover {
+    opacity: 1;
 }

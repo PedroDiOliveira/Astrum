@@ -1,20 +1,24 @@
-.nextPage{
-    height: 5em;
-    width: 5em;
+.nextPage {
+    height: 4.5em;
+    width: 4.5em;
     border-radius: 50%;
-    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.arrow{
-    height: 20px;
-    transition: all ease 0.4s;
-}
-
-.arrow:hover {
     cursor: pointer;
-    scale: 1.2;
-    transition: all ease 0.4s;
+    opacity: 0.7;
+    transition: opacity ease 0.4s, border-color ease 0.4s;
+    animation: pulse 3.5s ease-in-out infinite;
+}
+
+.nextPage:hover {
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.55);
+    animation: none;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.12); }
+    50% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
 }

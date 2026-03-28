@@ -13,6 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: fadeInDown 0.7s ease-out both;
 }
 
 .object-hero-text h3 {
@@ -31,11 +32,17 @@
     text-align: center;
 }
 
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @media (min-width: 900px) {
     .object-hero-text {
         height: auto;
         align-items: flex-start;
         gap: 0.3em;
+        animation: slideInLeft 0.8s ease-out both;
     }
 
     .object-hero-text h3 {
@@ -49,4 +56,9 @@
         letter-spacing: 2px;
         font-weight: 700;
     }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-24px); }
+    to { opacity: 1; transform: translateX(0); }
 }

@@ -1,21 +1,24 @@
-.landingPage{
+.landingPage {
     height: 100vh;
     overflow: hidden;
     position: relative;
 }
 
-
-.bottom-container{
-    
+.bottom-container {
     height: 50dvh;
     display: flex;
     justify-content: end;
     align-items: end;
 }
 
-.saturn{
+.saturn-parallax {
     position: absolute;
     top: 40%;
     left: -470px;
+    will-change: transform;
+}
+
+.saturn {
     height: 450px;
+    display: block;
 }

@@ -27,10 +27,18 @@ const PLANET_PHOTOS = {
     VENUS: venusImg,
 };
 
+const MIN_LOADING_MS = 3500;
+
 export default function AstrumObject() {
     const { planet } = useParams();
     const navigate = useNavigate();
     const [planetData, setPlanetData] = useState(null);
+    const [minTimeElapsed, setMinTimeElapsed] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setMinTimeElapsed(true), MIN_LOADING_MS);
+        return () => clearTimeout(timer);
+    }, []);
 
     useEffect(() => {
         async function getData() {
@@ -47,7 +55,7 @@ export default function AstrumObject() {
         getData();
     }, [planet]);
 
-    if (!planetData) {
+    if (!planetData || !minTimeElapsed) {
         return <TravelScreen />;
     }
 

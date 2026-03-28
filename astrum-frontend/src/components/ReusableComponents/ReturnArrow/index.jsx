@@ -1,4 +1,4 @@
-import LeftArrow from "../../../assets/icons/leftArrow.svg";
+import { ArrowLeft } from "@phosphor-icons/react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
@@ -7,15 +7,15 @@ export default function ReturnArrow({ path }) {
 
     const handleNavigation = () => {
         if (path) {
-            navigate(path); // Navega para o path fornecido
+            navigate(path);
         } else {
-            navigate(-1); // Volta para o path anterior no histórico
+            navigate(-1);
         }
     };
 
     return (
         <div className="return-arrow" onClick={handleNavigation}>
-            <img className="arrow" src={LeftArrow} alt="return arrow" />
+            <ArrowLeft weight="thin" size={24} />
         </div>
     );
 }

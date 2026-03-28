@@ -1,4 +1,5 @@
 import "./styles.css";
+import { SquaresFour } from "@phosphor-icons/react";
 import ReturnArrow from "../../ReusableComponents/ReturnArrow";
 import { useNavigate } from "react-router-dom";
 
@@ -13,9 +14,7 @@ export default function ObjectHeader({ hexColor }) {
                 onClick={() => navigate("/universe-library")}
                 style={{ color: hexColor || "white" }}
             >
-                {Array.from({ length: 9 }).map((_, i) => (
-                    <span key={i} className="grid-dot"></span>
-                ))}
+                <SquaresFour weight="thin" size={28} />
             </div>
         </div>
     );

@@ -1,4 +1,30 @@
-.object-header{
+.object-header {
     height: 3em;
-    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 0.5em;
+}
+
+.grid-icon {
+    display: grid;
+    grid-template-columns: repeat(3, 5px);
+    grid-template-rows: repeat(3, 5px);
+    gap: 4px;
+    cursor: pointer;
+    padding: 8px;
+    opacity: 0.85;
+    transition: opacity ease 0.3s;
+}
+
+.grid-icon:hover {
+    opacity: 1;
+}
+
+.grid-dot {
+    width: 5px;
+    height: 5px;
+    background: currentColor;
+    border-radius: 1px;
 }

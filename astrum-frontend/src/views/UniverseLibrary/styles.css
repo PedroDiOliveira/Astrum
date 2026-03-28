@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-.universeLibrary{
+.universeLibrary {
     min-height: 100dvh;
     overflow-y: scroll;
     padding-inline: 3%;
 }
 
-main{
-    height: 100dvh;
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,7 +14,7 @@ main{
     gap: 10px;
 }
 
-.upper-head{
+.upper-head {
     height: 3em;
     padding-left: 11px;
     display: flex;
@@ -24,7 +23,7 @@ main{
     justify-content: start;
 }
 
-.title{
+.title {
     height: 150px;
     display: flex;
     justify-content: center;
@@ -37,4 +36,22 @@ main{
     color: #808080;
     font-size: 27px;
     letter-spacing: 2px;
+}
+
+@media (min-width: 900px) {
+    .universeLibrary {
+        padding-inline: 5%;
+    }
+
+    main {
+        max-width: 640px;
+        margin: 0 auto;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .title h2 {
+        font-size: 32px;
+        letter-spacing: 4px;
+    }
 }

@@ -2,13 +2,34 @@ import "./styles.css";
 import ObjectName from "../../components/AstrumObject/ObjectName";
 import ObjectHeader from "../../components/AstrumObject/ObjectHeader";
 import ObjectPhoto from "../../components/AstrumObject/ObjectPhoto";
-import fotoProvisoria from "../../assets/planets/mars.svg";
-import { useParams } from "react-router-dom";
+import ObjectStatus from "../../components/AstrumObject/ObjectStats";
+import TravelScreen from "../../components/ReusableComponents/TravelScreen";
+import marsImg from "../../assets/planets/mars.svg";
+import saturnImg from "../../assets/planets/saturn.svg";
+import earthImg from "../../assets/planets/earth.svg";
+import jupiterImg from "../../assets/planets/jupiter.svg";
+import mercuryImg from "../../assets/planets/mercury.svg";
+import neptuneImg from "../../assets/planets/neptune.svg";
+import uranusImg from "../../assets/planets/uranus.svg";
+import venusImg from "../../assets/planets/venus.svg";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+const PLANET_PHOTOS = {
+    MARS: marsImg,
+    SATURN: saturnImg,
+    EARTH: earthImg,
+    JUPITER: jupiterImg,
+    MERCURY: mercuryImg,
+    NEPTUNE: neptuneImg,
+    URANUS: uranusImg,
+    VENUS: venusImg,
+};
+
 export default function AstrumObject() {
     const { planet } = useParams();
+    const navigate = useNavigate();
     const [planetData, setPlanetData] = useState(null);
 
     useEffect(() => {
@@ -19,21 +40,29 @@ export default function AstrumObject() {
                 console.log("Resposta do servidor:", response.data);
             } catch (error) {
                 console.error("Erro ao enviar os dados:", error);
+                navigate("/internal-error");
             }
         }
 
         getData();
     }, [planet]);
 
+    if (!planetData) {
+        return <TravelScreen />;
+    }
+
+    const planetPhoto = PLANET_PHOTOS[planet.toUpperCase()] || marsImg;
+
     return (
         <div className="main-content">
-            <ObjectHeader />
-            <ObjectName 
-                name={planet ? planet.toUpperCase() : "UNKNOWN"} 
-                nickname={planetData?.nickname || "UNKNOWN NICKNAME"} 
+            <ObjectHeader hexColor={planetData?.color} />
+            <ObjectName
+                name={planet ? planet.toUpperCase() : "UNKNOWN"}
+                nickname={planetData?.nickname || "UNKNOWN NICKNAME"}
                 hexColor={planetData?.color}
             />
-            <ObjectPhoto photo={planetData?.photo || fotoProvisoria} className="photo-animation"/>
+            <ObjectPhoto photo={planetPhoto} />
+            <ObjectStatus planetData={planetData} hexColor={planetData?.color} />
         </div>
     );
 }

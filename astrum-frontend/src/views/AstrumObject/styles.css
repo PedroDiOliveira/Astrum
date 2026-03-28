@@ -1,11 +1,8 @@
-.main-content{
+.main-content {
     height: 100dvh;
     padding-inline: 1.5em;
-}
-
-/* styles.css */
-.photo-animation {
-    animation: scaleUp 1.2s ease-out;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes scaleUp {
@@ -14,5 +11,43 @@
     }
     to {
         transform: scale(1);
+    }
+}
+
+@media (min-width: 900px) {
+    .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        padding-inline: 2em;
+        overflow: hidden;
+    }
+
+    /* ObjectHeader spans full width */
+    .main-content .object-header {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    /* ObjectName on left, vertically centered */
+    .main-content .object-hero-text {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: center;
+    }
+
+    /* ObjectPhoto on right, spans rows 2-3, overflows to the right */
+    .main-content .photo-container {
+        grid-column: 2;
+        grid-row: 2 / 4;
+        align-self: center;
+        overflow: visible;
+    }
+
+    /* ObjectStats on left at bottom */
+    .main-content .object-status-container {
+        grid-column: 1;
+        grid-row: 3;
+        align-self: end;
     }
 }

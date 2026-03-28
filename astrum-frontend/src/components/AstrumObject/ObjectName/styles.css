@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 @font-face {
     font-family: 'Afacad';
     src: url('/src/assets/fonts/Afacad-VariableFont_wght.ttf') format('truetype');
@@ -6,7 +7,7 @@
     font-style: normal;
 }
 
-.object-hero-text{
+.object-hero-text {
     height: 180px;
     display: flex;
     flex-direction: column;
@@ -14,7 +15,7 @@
     align-items: center;
 }
 
-.object-hero-text h3{
+.object-hero-text h3 {
     font-family: "Afacad", sans-serif;
     font-weight: 100;
     letter-spacing: 5px;
@@ -22,10 +23,30 @@
     text-align: center;
 }
 
-.object-hero-text h2{
+.object-hero-text h2 {
     letter-spacing: 5px;
     font-size: xx-large;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     text-align: center;
+}
+
+@media (min-width: 900px) {
+    .object-hero-text {
+        height: auto;
+        align-items: flex-start;
+        gap: 0.3em;
+    }
+
+    .object-hero-text h3 {
+        text-align: left;
+    }
+
+    .object-hero-text h2 {
+        font-size: clamp(3rem, 8vw, 9rem);
+        text-align: left;
+        line-height: 0.9;
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
 }

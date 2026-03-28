@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+    font-family: 'Afacad';
+    src: url('/src/assets/fonts/Afacad-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+.object-status-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 2em;
+    padding-inline: 0.5em;
+}
+
+.stat-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.stat-label {
+    color: #DADADA;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.stat-value {
+    font-weight: 700;
+    text-align: right;
+}
+
+@media (min-width: 900px) {
+    .stat-row {
+        justify-content: flex-start;
+        gap: 0.4em;
+        font-size: 15px;
+    }
+
+    .stat-value {
+        text-align: left;
+    }
+}

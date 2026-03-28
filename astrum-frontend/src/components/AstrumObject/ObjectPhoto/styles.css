@@ -1,10 +1,24 @@
-.photo-container{
+.photo-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.photo{
+.photo {
     height: 240px;
     width: 240px;
+    animation: scaleUp 1.2s ease-out;
+}
+
+@media (min-width: 900px) {
+    .photo-container {
+        justify-content: flex-end;
+        overflow: visible;
+    }
+
+    .photo {
+        height: min(75vh, 580px);
+        width: min(75vh, 580px);
+        transform: translateX(60px);
+    }
 }
